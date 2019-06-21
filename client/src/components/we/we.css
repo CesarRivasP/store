@@ -1,0 +1,22 @@
+@media (min-width: 480px){
+  .container-we{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-gap: 1rem;
+  }
+}
+
+.container-we .image img {
+  width: 100%;
+}
+
+.container-we .content h2 {
+  border-bottom: 8px solid #ffce00;
+  padding-bottom: 1rem;
+  text-align: left;
+}
+
+.container-we .content p {
+  color: grey;
+  line-height: 2rem;
+}
