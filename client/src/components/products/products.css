@@ -1,0 +1,56 @@
+div .products {
+   margin-top: 30px;
+}
+ul .products-list {
+  margin:0;
+  padding:0;
+}
+
+ul .products-list li{
+  padding: 20px;
+  text-align: center;
+}
+
+@media  (min-width:768px) {
+   ul.products-list li{
+       float: left;
+       width: 50%;
+   }
+}
+
+ul.products-list li:nth-child(2n+1) {
+   clear: both;
+}
+
+ul.products-list li img {
+   border: 1px solid grey;
+   max-width: 100%;
+}
+
+ul.products-list li img:hover {
+  border: 2px solid grey;
+}
+
+ul.products-list li p {
+   font-size: 28px;
+   font-weight: bold;
+   color: #ffffff;
+   margin:10px 0 0 0;
+}
+
+ul.products-list li p span {
+   color: #ffce00;
+   font-size: 40px;
+}
+
+ul.products-list li a {
+  background-color: #ffce00;
+  padding: 10px 40px;
+  display: inline-block;
+  margin: 20px;
+  color: grey;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 18px;
+}
