@@ -1,0 +1,37 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: arial, helvetica, sans-serif;
+  height: 100%;
+  margin: 0;
+  background-color: #FFFFFF;
+  margin-bottom: 10rem;
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+div .container {
+  max-width: 800px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+div .hero img {
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+  color: grey;
+  text-transform: uppercase;
+}
