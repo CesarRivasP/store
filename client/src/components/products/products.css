@@ -12,9 +12,11 @@ ul .products-list li{
 }
 
 @media  (min-width:768px) {
-   ul.products-list li{
-       float: left;
-       width: 50%;
+   ul.products-list li {
+     padding-top: 40px;
+      padding-bottom: 10px;
+      float: left;
+      width: 50%;
    }
 }
 
@@ -34,7 +36,7 @@ ul.products-list li img:hover {
 ul.products-list li p {
    font-size: 28px;
    font-weight: bold;
-   color: #ffffff;
+   color: grey;
    margin:10px 0 0 0;
 }
 
@@ -45,8 +47,11 @@ ul.products-list li p span {
 
 ul.products-list li a {
   background-color: #ffce00;
-  padding: 10px 40px;
-  display: inline-block;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   margin: 20px;
   color: grey;
   text-decoration: none;
