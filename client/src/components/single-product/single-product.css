@@ -7,7 +7,7 @@
 }
 
 .info-product img {
-  border: .5rem solid #8001c3;
+  border: 1px solid grey;
   width: 100%;
 }
 
@@ -28,4 +28,8 @@
 .info.product .info p {
   color: grey;
   line-height: 2rem;
+}
+
+.price {
+  color: grey
 }
