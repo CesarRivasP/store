@@ -7,8 +7,8 @@ function Product({information}){
 
   return (
     <li className="list-prod">
-      <img src={`/img/${image}.png`} alt={name}/>
-      <p>{ name } <span>$ {price}</span></p>
+      <img src={`/img/${image}.png`} alt={name} />
+      <p>{ name } <span>${price}</span></p>
       <Link to={`/producto/${id}`}>Más Información</Link>
     </li>
   );
