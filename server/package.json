@@ -4,7 +4,7 @@
   "description": "Servidor de express con JWT",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon --exec babel-node index.js -e js"
   },
   "keywords": [],
   "author": "César Rivas",
@@ -20,6 +20,7 @@
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-stage-0": "^7.0.0"
   }
