@@ -52,8 +52,8 @@ class Router extends Component {
 
     return (
       <BrowserRouter>
+        <Header />
         <div className="container">
-          <Header />
           <Navigation />
 
           <Switch>
