@@ -1,5 +1,13 @@
 .list-prod{
   list-style: none;
-  padding: 10px;
+  padding: 5rem;
   margin: auto;
+}
+
+.list-prod p {
+  text-align: center;
+}
+
+.list-prod img {
+  margin-left: 10%;
 }
