@@ -14,7 +14,7 @@ function SingleProduct({product}){
 
       <div className="info">
         <h2>{name}</h2>
-        <p className="price">$ {price}</p>
+        <p className="price"><strong>${price}</strong></p>
         <p>{description}</p>
       </div>
     </div>
