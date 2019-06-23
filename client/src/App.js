@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
 // import Router from './components/router';
-import { makeMainRoutes } from './components/routes';
+import MakeMainRoutes  from './components/routes';
 
 
-const routes = makeMainRoutes();
+// const routes = MakeMainRoutes();
 
 function App() {
   return (
     <Fragment>
-      { routes }
+      <MakeMainRoutes />
     </Fragment>
   );
 }
