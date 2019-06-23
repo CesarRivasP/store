@@ -12,9 +12,9 @@ function Search({ search }){
   }
 
   return (
-    <form className="search">
+    <div className="search">
       <input type="text" placeholder="Búsqueda" onChange={readData} />
-    </form>
+    </div>
   )
 }
 
