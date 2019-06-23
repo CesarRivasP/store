@@ -7,7 +7,7 @@ import We from './we/we';
 import Error from './error/error';
 import SingleProduct from './single-product/single-product';
 import Contact from './contact/contact';
-import infoProducts from '../data/data.json';
+// import infoProducts from '../data/data.json';
 
 class Router extends Component {
   state = {
