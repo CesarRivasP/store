@@ -5,7 +5,7 @@ Aplicación desarrollada en ReactJS que permite visualizar los productos de una 
 
 * Utilización de React Hooks
 * Implementación de servidor express para consumir los productos
-* Utiliza Auth0 para el ingreso y registro como método se seguridad
+* Utiliza Auth0 para el ingreso y registro como método de seguridad
 * Sistema se sesión por medio de tokens
 
 ## Scripts
