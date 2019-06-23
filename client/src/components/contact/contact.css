@@ -1,6 +1,11 @@
 form {
   background-color: white;
   padding: 2rem;
+  border-color: #bdbdbd !important;
+  border: 1px solid;
+  -webkit-box-shadow: 4px 4px 9px -4px rgba(66,66,66,1);
+  -moz-box-shadow: 4px 4px 9px -4px rgba(66,66,66,1);
+  box-shadow: 4px 4px 9px -4px rgba(66,66,66,1);
 }
 
 form legend {
@@ -31,11 +36,11 @@ form legend {
 }
 
 .input-field input[type="submit"] {
-  background-color: blue;
-  color: white;
+  background-color: #ffce00;
+  color: grey;
   padding: .5rem 2rem;
-  border-radius: 4px;
-  border-color: blue;
+  border-radius: 2px;
+  border-color: #ffce00;
   font-size: 1.2rem;
   font-weight: bold;
 }
