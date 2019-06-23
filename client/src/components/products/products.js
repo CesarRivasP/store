@@ -18,15 +18,38 @@ class Products extends Component {
     console.log(this.props.auth.isAuthenticated());
   }
 
+  youArelogin = () => {
+    this.props.auth.login();
+  }
+
   render(){
+    const { isAuthenticated } = this.props.auth;
     return (
-        <div className="products">
-          <h2>Nuestros Productos</h2>
+      <div className="products">
+        <h2>Nuestros Productos</h2>
 
-          <Search /*search={searchProduct}*/ />
+        <Search /*search={searchProduct}*/ />
 
+        {
+          isAuthenticated() && (
+            <ul className="products-list">
+              <p>Estas logueado</p>
+            </ul>
+          )
+        }
 
-        </div>
+        <ul className="products-list">
+          {
+            !isAuthenticated() && (
+              <div className="container-button">
+                <p>Para ver el contenido debes estar logueado</p>
+                <a onClick={this.youArelogin} className="button">Iniciar Sesión</a>
+              </div>
+            )
+          }
+        </ul>
+
+      </div>
     );
   }
 }
