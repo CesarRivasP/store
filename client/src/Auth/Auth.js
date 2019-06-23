@@ -44,23 +44,24 @@ export default class Auth {
     });
   }
 
-  getAccessToken() {
-    return this.accessToken;
-  }
-
   getIdToken() {
     return this.idToken;
   }
 
   getAccessToken(){
     // todo esto se guarda en local storage
-    const accessToken = localStorage.getItem('access_token'); //solo leemos el elemento access_token que se crea al loguearse
+    const localToken = localStorage.getItem('access_token'); //solo leemos el elemento access_token que se crea al loguearse
     // Verifica que el usuario o las credenciales sean correctas y genera el token automaticamente
-    if(!accessToken){ //si no hay token
+    if(localToken){
+      return JSON.parse(localToken);
+    }
+    else if(this.accessToken){ //si no hay token
+      localStorage.setItem('access_token', JSON.stringify(this.accessToken))
+      return this.accessToken;
+    }
+    else {
       return new Error(`Hubo un error al generar el token`);
     }
-
-    return accessToken;
   }
 
   setSession(authResult) {
@@ -68,7 +69,7 @@ export default class Auth {
     localStorage.setItem('isLoggedIn', 'true');
 
     // Set the time that the access token will expire at
-    let expiresAt = (authResult.expiresIn * 1000) + new Date().getTime();
+    let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
     this.accessToken = authResult.accessToken;
     this.idToken = authResult.idToken;
     this.expiresAt = expiresAt;
@@ -109,7 +110,9 @@ export default class Auth {
   isAuthenticated() {
     // Check whether the current time is past the
     // access token's expiry time
-    let expiresAt = this.expiresAt;
-    return new Date().getTime() < expiresAt;
+    // let expiresAt = this.expiresAt;
+
+    // return new Date().getTime() < expiresAt;
+    return localStorage.getItem('isLoggedIn') === "true";
   }
 }
