@@ -22,6 +22,7 @@ const handleAuthentication = ({location}) => {
 }
 
 export const makeMainRoutes = () => {
+
   return (
       <Router history={history}>
         <Header />
@@ -54,16 +55,7 @@ export const makeMainRoutes = () => {
           <Route
             exact
             path="/producto/:productId"
-            render={(props) => {
-              let id_product = props.location.pathname.replace('/producto/', '');
-              return (
-                <SingleProduct
-                  product={this.state.products[id_product]}
-                  key={id_product}
-                  auth={auth} {...props}
-                />
-              );
-            }}
+
           />
 
           <Route path="/callback" render={(props) => {
