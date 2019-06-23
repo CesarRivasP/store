@@ -19,7 +19,6 @@ class Router extends Component {
     this.setState({
       products: infoProducts
     }, () => console.log(infoProducts))
-
   }
 
 
