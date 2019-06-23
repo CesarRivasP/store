@@ -16,7 +16,7 @@ body {
 }
 
 header {
-  background-color: grey;
+  background-color: black;
   text-align: center;
   padding: 20px 0;
 }
@@ -40,4 +40,23 @@ h2 {
   text-align: center;
   color: grey;
   text-transform: uppercase;
+}
+
+.container-button {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: grey;
+}
+
+.container-button .button {
+  padding: .5rem 3rem;
+  background-color: #ffd742;
+  border-radius: 2px;
+  color: grey;
+  text-transform: uppercase;
+}
+
+.container-button .button:hover {
+  cursor: pointer;
 }
