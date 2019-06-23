@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Router } from 'react-router-dom';
 // Auth0
 import Callback from './Callback/Callback';
@@ -9,7 +9,7 @@ import Header from './header/header';
 import Navigation from './navigation/navigation';
 import Products from './products/products';
 import We from './we/we';
-import Error from './error/error';
+// import Error from './error/error';
 import SingleProduct from './single-product/single-product';
 import Contact from './contact/contact';
 
@@ -21,13 +21,19 @@ const handleAuthentication = ({location}) => {
   }
 }
 
-export const makeMainRoutes = () => {
+function MakeMainRoutes() {
+
+  const [prod, saveProd] = useState([]);
+
+  const productsList = (products) => {
+    saveProd(products);
+  }
 
   return (
       <Router history={history}>
         <Header />
         <div className="container">
-          <Navigation />
+          <Navigation auth={auth} />
 
           <Route
             exact
@@ -39,15 +45,20 @@ export const makeMainRoutes = () => {
 
           <Route exact path="/nosotros" component={We} />
 
-          <Route exact path="/contacto" component={Contact} />
+          <Route
+            exact
+            path="/contacto"
+            render={(props) => (
+              <Contact auth={auth} {...props} />
+          )}/>
 
-          <Route component={Error} />
+          {/* <Route component={Error} /> */}
 
           <Route
             exact
             path="/productos"
             render={(props) => (
-              <Products /*products={result}*/ /*searchProduct={this.searchProduct}*/ auth={auth} {...props} />
+              <Products productsList={productsList} /*searchProduct={this.searchProduct}*/ auth={auth} {...props} />
               // auth={auth} {...props} pasa las funciones de autenticacion al componente
             )}
           />
@@ -55,14 +66,28 @@ export const makeMainRoutes = () => {
           <Route
             exact
             path="/producto/:productId"
-
+            render={(props) => {
+              let id_product = props.location.pathname.replace('/producto/', '');
+              return (
+                <SingleProduct
+                  product={prod[id_product]}
+                  key={id_product}
+                  auth={auth} {...props}
+                />
+              );
+            }}
           />
 
-          <Route path="/callback" render={(props) => {
-            handleAuthentication(props);
-            return <Callback {...props} />
-          }}/>
+          <Route
+            path="/callback"
+            render={(props) => {
+              handleAuthentication(props);
+              return <Callback {...props} />
+            }}
+          />
         </div>
       </Router>
   );
 }
+
+export default MakeMainRoutes;
