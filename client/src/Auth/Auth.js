@@ -11,8 +11,10 @@ export default class Auth {
     domain: AUTH_CONFIG.domain,
     clientID: AUTH_CONFIG.clientID,
     redirectUri: AUTH_CONFIG.callbackUrl,
+    // para utilizar las auth0 variables se hace con audience
+    audience: AUTH_CONFIG.apiURL,
     responseType: 'token id_token',
-    scope: 'openid'
+    scope: 'read:productos',
   });
 
   constructor() {
